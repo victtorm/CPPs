@@ -1,8 +1,8 @@
-SRCS = main.cpp 
+SRCS = main.cpp Harl.cpp 
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex04
+NAME = harlFilter
 CC = c++
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

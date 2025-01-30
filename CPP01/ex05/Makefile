@@ -1,6 +1,6 @@
 SRCS = main.cpp Harl.cpp 
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex04
+NAME = ex05
 CC = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
