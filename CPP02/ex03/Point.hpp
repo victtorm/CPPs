@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 10:35:49 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/01 10:35:51 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/01 19:12:06 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/01 19:34:01 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Fixed.hpp"
 
-#include <string>
-#include <iostream>
-#include <new>
+#ifndef POINT_HPP
+#define POINT_HPP
 
-class Zombie
-{
+#include "Fixed.hpp"
+
+class Point {
     private:
-            std::string name;
+            const Fixed x;
+            const Fixed y;
     public:
-            Zombie(std::string name);
-            ~Zombie();
-            void announce(void);
-};
+        Point();
+        Point(const float x, const float y);
+        Point(const Point &original);
+        Point& operator=(const Point& original);
+        ~Point();
 
-void   randomChump(std::string name);
-Zombie *newZombie(std::string name);
+}
+    
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

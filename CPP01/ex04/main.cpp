@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/01 10:37:18 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/01 10:37:22 by vbritto-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
@@ -6,7 +17,7 @@
 
 void ft_replace(const std::string &filename, const std::string &s1, const std::string &s2)
 {
-	if (s1.empty() || s2.empty() || s1 == s2)
+	if (s1.empty() || s2.empty())
 	{
 		std::cerr << "Error: ivalid s1 or s2."  << std::endl;
 		return;
@@ -33,7 +44,7 @@ void ft_replace(const std::string &filename, const std::string &s1, const std::s
             line.erase(place, s1.length());
             line.insert(place, s2);
 			place += s2.length();
-            //place = line.find(s1, 0);
+            place = line.find(s1, place);
         }
         output_file << line << std::endl;
     }
