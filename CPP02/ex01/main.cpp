@@ -5,26 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 10:36:24 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/01 10:36:25 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/01 13:50:03 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/01 17:06:14 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
 int main(void)
-{
-    std::string str = "HI THIS IS BRAIN";
-    std::string *stringPTR = &str;
-    std::string &stringREF = str;
+{ 
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-    std::cout << "Memory Address: "<< std::endl;
-    std::cout << "str      : " << &str << std::endl;
-    std::cout << "stringPTR: " << stringPTR << std::endl;
-    std::cout << "stringREF: " << &stringREF << std::endl;
+	a = Fixed( 1234.4321f );
 
-    std::cout << "Values: "<< std::endl;
-    std::cout << "str      : " << str << std::endl;
-    std::cout << "stringPTR: " << *stringPTR << std::endl;
-    std::cout << "stringREF: " << stringREF << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	
+	return (0);
 }
