@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:56:10 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 15:15:53 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:34:23 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,25 @@ void ClapTrap::beRepaired(unsigned int amount)
         this->energy--;
     }
   
+}
+
+std::string ClapTrap::GetName()
+{
+    return(this->name);
+}
+
+unsigned int ClapTrap::GetHit()
+{
+    return(this->hit);
+}
+
+
+unsigned int ClapTrap::GetEnergy()
+{
+    return(this->energy);
+}
+
+unsigned int ClapTrap::GetAttackDamage()
+{
+    return(this->attack_damage);
 }
