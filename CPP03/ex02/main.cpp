@@ -6,20 +6,20 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 15:30:09 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/11 15:31:12 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap a("Rita");
-    ScavTrap b("Von");
+    FragTrap a("Rita");
+    FragTrap b("Von");
 
-    a.attack("Von");
+    a.attack("Rita");
     b.beRepaired(5);
-    a.guardGate();
+    a.highFivesGuys();
 
     return(0);
 }

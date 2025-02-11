@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 15:30:09 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/11 15:23:28 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/11 15:26:10 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-    ScavTrap a("Rita");
-    ScavTrap b("Von");
+    public:
+            FragTrap();
+            ~FragTrap();
+            FragTrap(const FragTrap &original);
+            FragTrap &operator=(const FragTrap &original);
+            FragTrap(std::string name);
 
-    a.attack("Von");
-    b.beRepaired(5);
-    a.guardGate();
+            void guardGate();
+            void highFivesGuys();
+};
 
-    return(0);
-}
+#endif

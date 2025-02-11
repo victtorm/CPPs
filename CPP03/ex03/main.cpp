@@ -6,20 +6,21 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 15:30:09 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:01:33 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    ScavTrap a("Rita");
-    ScavTrap b("Von");
+    DiamondTrap a("Rita");
+    DiamondTrap b("Von");
 
-    a.attack("Von");
+    a.attack("Rita");
     b.beRepaired(5);
-    a.guardGate();
+    a.highFivesGuys();
+    a.whoAmi();
 
     return(0);
 }
