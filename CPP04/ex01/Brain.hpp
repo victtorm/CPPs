@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/12 14:56:31 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/13 17:53:12 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/13 17:56:05 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main()
+#include <iostream>
+
+class Brain
 {
-    ClapTrap b("Rita");
-    ClapTrap c("Von");
+    public:
+            Brain();
+            ~Brain();
+            Brain(const Brain &original);
+            Brain&operator=(const Brain &original);
 
-    c.attack("Rita");
-	c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-    b.beRepaired(5);
+            
+};
 
-    return(0);
-}
+#endif

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/12 14:56:31 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/13 17:56:23 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/13 18:05:01 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Brain.hpp"
 
-int main()
+Brain::Brain()
 {
-    ClapTrap b("Rita");
-    ClapTrap c("Von");
+    std::cout << "Brain constructor was called" << std::endl;
+}
 
-    c.attack("Rita");
-	c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-    b.beRepaired(5);
+Brain::~Brain()
+{
+    std::cout << "Brain destructor was called" << std::endl;
+}
 
-    return(0);
+Brain::Brain(const Brain &original)
+{
+    *this = original;
+}
+
+Brain& Brain::operator=(const Brain &original)
+{
+    
+    return(*this);
+
 }

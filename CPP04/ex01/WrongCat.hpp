@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/12 14:56:31 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/13 16:02:35 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-int main()
+#include "WrongAnimal.hpp"
+
+class WrongCat : public virtual WrongAnimal
 {
-    ClapTrap b("Rita");
-    ClapTrap c("Von");
+    public:
+        WrongCat();
+        ~WrongCat();
+        WrongCat(const WrongCat &original);
+        WrongCat &operator=(const WrongCat &original);
 
-    c.attack("Rita");
-	c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-    b.beRepaired(5);
+        void makeSound()const;
+};
 
-    return(0);
-}
+#endif
