@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 15:23:28 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 15:26:10 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:29:57 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class FragTrap : public ClapTrap
             FragTrap &operator=(const FragTrap &original);
             FragTrap(std::string name);
 
-            void guardGate();
             void highFivesGuys();
 };
 

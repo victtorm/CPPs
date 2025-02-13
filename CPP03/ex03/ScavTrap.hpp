@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 16:31:40 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 18:05:39 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:35:03 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class ScavTrap : public virtual ClapTrap
             ScavTrap(std::string name);
 
             void guardGate();
-            virtual void attack(std::string &target);
+            void attack(const std::string &target);
+            unsigned int getEP();
 };
 
 #endif

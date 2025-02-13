@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 14:55:39 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/12 14:56:31 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/13 13:31:38 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/13 16:01:48 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main()
+#include <iostream>
+
+class Animal
 {
-    ClapTrap b("Rita");
-    ClapTrap c("Von");
+    protected:
+                std::string type;
+    public:
+                Animal();
+                virtual ~Animal();
+                Animal(const Animal &original);
+                Animal &operator=(Animal const &original);
 
-    c.attack("Rita");
-	c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-c.attack("Rita");
-    b.beRepaired(5);
+                virtual void makeSound()const;
+                std::string getType()const;
+};
 
-    return(0);
-}
+#endif

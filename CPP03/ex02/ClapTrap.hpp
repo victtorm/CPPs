@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:56:38 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/11 14:48:29 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/12 13:59:08 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class ClapTrap
 {
     protected:
             std::string name;
-            unsigned int hit;
-            unsigned int energy;
+            unsigned int hit_points;
+            unsigned int energy_points;
             unsigned int attack_damage;
     public:
             ClapTrap();
