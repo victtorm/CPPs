@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 17:53:12 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/13 17:56:05 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:10:23 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BRAIN_HPP
 
 #include <iostream>
+#include <new>
 
 class Brain
 {
@@ -23,7 +24,7 @@ class Brain
             Brain(const Brain &original);
             Brain&operator=(const Brain &original);
 
-            
+            std::string *ideias[100];
 };
 
 #endif
