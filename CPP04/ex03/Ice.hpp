@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/15 18:37:35 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/15 18:37:56 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public virtual Animal
+class Ice : public virtual AMateria
 {
-    private:
-        Brain* brain;
+    private: 
+            std::string type = "ice";
     public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &original);
-        Cat &operator=(const Cat &original);
+            Ice();
+            ~Ice();
+            Ice(const Ice &original);
+            Ice &operator=(const Ice &original);
 
-        void makeSound()const;
-        void addIdea(std::string think);
-        void showInfo();
+            AMateria* clone();
+            void use(ICharacter& target);
 };
 
 #endif

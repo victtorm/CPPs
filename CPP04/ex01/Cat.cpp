@@ -6,7 +6,7 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:32:34 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/14 18:49:54 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:12:37 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::~Cat()
     std::cout << "Cat destructor was called" << std::endl;
 }
 
-Cat::Cat(const Cat &original)
+Cat::Cat(const Cat &original) : Animal()
 {
     *this = original;
 }
@@ -48,10 +48,11 @@ void Cat::makeSound()const
 
 void Cat::addIdea(std::string think)
 {
-    this->brain->ideias[0] = &think;
+
+    this->brain->ideias[0] = think;
 }
 
 void Cat::showInfo()
 {
-    std::cout << "This animal is a " << this->type << " and your brain " <<  this->brain << std::endl;
+    std::cout << this->brain->ideias[0] << " and my brain is: " <<  this->brain << std::endl;
 }

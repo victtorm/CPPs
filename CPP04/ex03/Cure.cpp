@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/15 18:25:50 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/15 18:34:15 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Cure.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : public virtual Animal
+Cure::Cure()
 {
-    private:
-        Brain* brain;
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &original);
-        Cat &operator=(const Cat &original);
 
-        void makeSound()const;
-        void addIdea(std::string think);
-        void showInfo();
-};
+}
+Cure::~Cure()
+{
 
-#endif
+}
+
+Cure::Cure(const Cure &original)
+{
+    *this = original;
+}
+
+Cure& Cure::operator=(const Cure &original)
+{
+    return(*this);
+}
+
+Cure::AMateria* clone()
+{
+
+}
+void Cure::use(ICharacter& target)
+{
+    std::cout << "* heals " << target << "'s wonds *" << std::endl;
+}

@@ -1,6 +1,6 @@
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex00
+NAME = ex02
 CC = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 

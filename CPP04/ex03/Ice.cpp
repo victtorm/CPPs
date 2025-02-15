@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/15 18:36:57 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/15 18:39:00 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Ice.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : public virtual Animal
+Ice::Ice()
 {
-    private:
-        Brain* brain;
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &original);
-        Cat &operator=(const Cat &original);
 
-        void makeSound()const;
-        void addIdea(std::string think);
-        void showInfo();
-};
+}
+Ice::~Ice()
+{
 
-#endif
+}
+
+Ice::Ice(const Ice &original)
+{
+    *this = original;
+}
+
+Ice& Ice::operator=(const Ice &original)
+{
+    return(*this);
+}
+
+Ice::AMateria* clone()
+{
+
+}
+void Ice::use(ICharacter& target)
+{
+    std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
+}
