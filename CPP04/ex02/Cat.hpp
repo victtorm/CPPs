@@ -6,17 +6,17 @@
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:33:00 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public virtual Animal
+class Cat : public virtual AAnimal
 {
     private:
         Brain* brain;

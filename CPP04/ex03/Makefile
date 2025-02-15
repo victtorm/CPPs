@@ -1,4 +1,4 @@
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = ex00
 CC = c++

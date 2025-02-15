@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/15 18:51:11 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/15 18:58:09 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Character.hpp"
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : public virtual Animal
+Character::Character()
 {
-    private:
-        Brain* brain;
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &original);
-        Cat &operator=(const Cat &original);
 
-        void makeSound()const;
-        void addIdea(std::string think);
-        void showInfo();
-};
+}
 
-#endif
+Character::Character(std::string name)
+{
+
+}
+
+Character::~Character()
+{
+
+}
+
+Character::Character(const Character &original)
+{
+    *this = original;
+}
+
+Character& Character::operator=(const Character &original)
+{
+    if (this != &original)
+    {
+
+    }
+    return(*this);
+}
+
+Character::~ICharacter()
+{
+
+}

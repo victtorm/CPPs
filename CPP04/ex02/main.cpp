@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 13:32:07 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/02/15 13:58:26 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/02/13 15:23:55 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/02/15 15:34:00 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-class Cat : public virtual Animal
+int main()
 {
-    private:
-        Brain* brain;
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &original);
-        Cat &operator=(const Cat &original);
+   // const AAnimal* meta = new AAnimal();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
+    
+    //meta->makeSound();
+    j->makeSound();
+    i->makeSound();
 
-        void makeSound()const;
-        void addIdea(std::string think);
-        void showInfo();
-};
+    //delete (meta);
+    delete (i);
+    delete (j);
 
-#endif
+    return 0;
+}
