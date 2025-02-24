@@ -26,8 +26,8 @@ int	main()
 		b1 = new Bureaucrat("Rita", 55);
 		b2 = new Bureaucrat("Von", 45);
 		f1 = new Form("First Form", 50, 50);
-		f1->beSigned(*b1);
-        f1->beSigned(*b1);
+		b1->signForm(*f1);
+        b1->signForm(*f1);
 	}
 	catch (const std::exception& e)
     {
@@ -36,7 +36,7 @@ int	main()
 	try
 	{
 		f2 = new Form("Second Form", 50, 50);
-		f2->beSigned(*b2);
+		b2->signForm(*f2);
 	}
 	catch (const std::exception& e)
     {

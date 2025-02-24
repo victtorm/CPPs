@@ -45,15 +45,15 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     return (*this);
 }
 
-std::string PresidentialPardonForm::getTarget()
+std::string PresidentialPardonForm::getTarget() const
 {
     return (this->target);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if (!this->getSigend())
-        throw AForm::FormNotSigendException();
+    if (!this->getSigned())
+        throw AForm::FormNotSignedException();
     if (executor.getGrade() > this->getGradeExecute())
         throw AForm::GradeTooLowException();
     std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
