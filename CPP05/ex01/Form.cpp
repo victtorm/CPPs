@@ -79,23 +79,11 @@ unsigned int Form::getGradeExecute() const
     return (this->grade_execute);
 }
 
+
 void    Form::beSigned(const Bureaucrat &b)
 {
-    if (this->signedForm)
-    {
-        std::cout << "Form is alredy signed." << std::endl;
-        return ;
-    }
-    else if (b.getGrade() < this->grade_sign)
-    {
-        b.signForm(this->name, false);
-        throw Form::GradeTooLowException();
-    }
-    else    
-    {
+        (void)b;
         this->signedForm = true;
-        b.signForm(this->name, true);
-    }
 }
 
 std::ostream &operator<<(std::ostream &os, const Form& f)
@@ -104,7 +92,7 @@ std::ostream &operator<<(std::ostream &os, const Form& f)
     if (f.getSigned() == true)
         os << " is already signed, and this form";
     else
-        os << "is not signed, and this form";
+        os << " is not signed, and this form";
     os << " have a grade " << f.getGradeSign() << "to sign";
     os << " and a grade " << f.getGradeExecute() << " to execute";
     return (os);

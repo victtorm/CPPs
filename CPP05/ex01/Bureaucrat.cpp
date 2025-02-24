@@ -76,12 +76,23 @@ void Bureaucrat::decrementGrade()
     this->grade++;
 }
 
-void Bureaucrat::signForm(std::string form, bool check) const
+void Bureaucrat::signForm(Form &form) const
 {
-    if (check)
-        std::cout << this->name << " signed " << form << std::endl;
+    if (form.getSigned())
+    {
+        std::cout << "Form is alredy signed." << std::endl;
+        return ;
+    }
+    if (this->grade > form.getGradeSign())
+    {
+        std::cout << this->name << " couldn't sign " << form.getName() << " because don't have grade to that!" << std::endl;
+        throw Form::GradeTooLowException();
+    }
     else
-        std::cout << this->name << " couldn't sign " << form << " because don't have grade to that!" << std::endl;
+    {
+        form.beSigned(*this);
+        std::cout << this->name << " signed " << form.getName() << std::endl;
+    }
 }
 
 std::ostream& operator<<(std::ostream & o, const Bureaucrat &original)
