@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbritto- <vbritto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 14:34:38 by vbritto-          #+#    #+#             */
-/*   Updated: 2025/03/08 16:00:48 by vbritto-         ###   ########.fr       */
+/*   Created: 2025/03/15 13:13:45 by vbritto-          #+#    #+#             */
+/*   Updated: 2025/03/15 13:45:13 by vbritto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
-# include <iostream>
-# include <cstdlib>
-# include <ctime>
-# include <exception>
+#include <iostream>
 
+template <typename T>
 
-class Base
+void iter(T *array, size_t len, void(*f)(T&))
 {
-    public:
-            virtual ~Base();
+    size_t i = 0;
+
+    if (array == NULL || f == NULL)
+        return;
+    while (i < len)
+    {
+        f(array[i]);
+        i++;
+    }
+
 };
 
 #endif
