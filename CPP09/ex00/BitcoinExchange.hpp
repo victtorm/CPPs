@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <limits>
 
 class Exchange
 {
@@ -21,14 +22,15 @@ class Exchange
             Exchange& operator=(const Exchange &original);
             ~Exchange();
 
-            void getData();
-            void checkDatabase();
+            void getData(std::string file);
             bool checkKey(std::string date);
             int strDigit(std::string str);
-            void makeExchange();
+            bool checkValue(float value);
+            void makeExchange(std::string input_file);
+            void calculate(std::string date, float value);
 
 };
 
 #endif
 
-//fazer check sem ,
+//fazer check sem 
