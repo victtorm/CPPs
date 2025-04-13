@@ -1,64 +1,64 @@
 #include "BitcoinExchange.hpp"
 
-Exchange::Exchange(std::string file)
+BitcoinExchange::BitcoinExchange()
 {
-    getData("data.csv");
-    makeExchange(file);
+    _data = getData("data.csv");
 }
 
 
-Exchange::Exchange(const Exchange &original)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &original)
 {
     *this = original;
 }
 
-Exchange& Exchange::operator=(const Exchange &original)
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &original)
 {
-    if (this != &original)
-    {
-
-    }
+    (void)original;
     return (*this);
 }
 
-Exchange::~Exchange() {}
+BitcoinExchange::~BitcoinExchange() {}
 
-
-
-void Exchange::getData(std::string file)
+std::map<std::string, float> BitcoinExchange::getData(std::string file)
 {
-    std::fstream inFile;
+    std::fstream inFile(file);
     std::string line;
-    std::map<std::string, float> data;
+    std::map<std::string, float> result;
 
-    inFile.open(file, std::ios::out);
+    //inFile.open(file, std::ios::out);
     if (!inFile.good())
-        throw std::runtime_error("Error: could not open database file.");
+    {
+        std::cerr << "Error: could not open database file." << std::endl;
+        return result;
+    }
     std::getline(inFile, line);
-    if (line.compare("data | value") != 0)
-        throw std::runtime_error("Error: bad  input, data | value, not found.");
+    if (file.compare("data.csv") != 0 && line.compare("date | value") != 0)
+    {
+        std::cerr << "Error: bad  input, data | value, not found." << std::endl;
+        return result;
+    }
     while (std::getline(inFile, line))
     {
         for (size_t i = 0; i < line.size(); i++)
         {
-            if (line[i] == ',' || (line[i] == '|' && file.compare("data.csv")))
-                _data[line.substr(0,i)] = atof(line.substr(i + 1, line.size()).c_str());
+            if (line[i] == ',' || (line[i] == '|' && file.compare("data.csv") != 0))
+                result[line.substr(0,i)] = atof(line.substr(i + 1, line.size()).c_str());
         }
     }
-    return;
+    return result;
 }
 
-int Exchange::strDigit(std::string string)
+int BitcoinExchange::strDigit(std::string string)
 {
     for(std::string::iterator it = string.begin(); it != string.end(); it++)
     {
         if(!isdigit(*it))
-            return 0;
+        return 0;
     }
     return 1;
 }
 
-bool Exchange::checkKey(std::string date)
+bool BitcoinExchange::checkKey(std::string date)
 {
     std::string year, month, day;
     year.assign(date, 0, 4);
@@ -66,79 +66,52 @@ bool Exchange::checkKey(std::string date)
     day.assign(date, 8, 2);
 
     if (!strDigit(year) || !strDigit(month) || !strDigit(day))
-        return false;
+    return false;
     int yearInt, monthInt, dayInt;
-    yearInt = atoi(year.c_str());
-    monthInt = atoi(month.c_str());
-    dayInt = atoi(day.c_str());
+    yearInt = stoi(year);
+    monthInt = stoi(month);
+    dayInt = stoi(day);
     if (monthInt < 0  || monthInt > 12 || dayInt < 0 || dayInt > 31)
-        return false;
+    return false;
     if ((monthInt == 2 || monthInt == 4 || monthInt == 4
-       || monthInt == 6 || monthInt == 9 || monthInt == 11) && dayInt == 31)
-       return false;
-    bool leapYear = (yearInt % 4 == 0 && (yearInt % 100 != 0 || yearInt % 400 == 0));
-    if (monthInt == 2 && (dayInt > 29 || (dayInt == 29 && !leapYear)))
+        || monthInt == 6 || monthInt == 9 || monthInt == 11) && dayInt == 31)
         return false;
-    return true;
-}
-
-
-bool Exchange::checkValue(float value)
-{
-    if (value < 0)
-    {
-        std::cout << "Error: invalid with negative numbers." << std::endl;
+        bool leapYear = (yearInt % 4 == 0 && (yearInt % 100 != 0 || yearInt % 400 == 0));
+        if (monthInt == 2 && (dayInt > 29 || (dayInt == 29 && !leapYear)))
         return false;
+        return true;
     }
-    if (value > INT_MAX)
-    {
-        std::cout << "Error: number bigger than INT_MAX ." << std::endl;
-        return false;
-    }
-    return true;
-}
-
-void Exchange::getInput(std::string date, float value)
-{
-
-}
-
-void Exchange::makeExchange(std::string input_file)
-{
-    getInput(input_file);
-    std::map<std::string, float>::iterator it = _data.begin();
     
-    while (it != _data.end())
+    
+    bool BitcoinExchange::checkValue(float value)
     {
-        if (checkKey(it->first) &&  checkValue(it->second))
+        if (value < 0)
+        {
+            std::cout << "Error: invalid with negative numbers." << std::endl;
+            return false;
+        }
+        if (value > INT_MAX)
+        {
+            std::cout << "Error: number bigger than INT_MAX ." << std::endl;
+            return false;
+        }
+        return true;
+    }
+    
+void BitcoinExchange::makeExchange(std::string file)
+{
+    _file = getData(file);
+    std::map<std::string, float>::iterator it = _file.begin();
+    while (it != _file.end())
+    {
+        if (checkKey(it->first) && checkValue(it->second))
             calculate(it->first, it->second);
         it++;
     }
 } 
-/*
-std::string Exchange::checkDate(std::string date)
-{
-    std::string year, month, day;
-    year.assign(date, 0, 4);
-    month.assign(date, 5, 2);
-    int yearInt, monthInt, dayInt;
-    yearInt = atoi(year.c_str());
-    monthInt = atoi(month.c_str());
-    dayInt = atoi(day.c_str());
-    if (date.compare("2009-01-01") || yearInt <= 2008)
-        return _data.begin()->first;
-    if (date.compare("2022-03-30") || date.compare("2022-03-31")
-            || (yearInt == 2022 && monthInt >= 4) || yearInt >= 2023)
-        return _data.end()->first;
-    std::map<std::string, float>::iterator it = _data.find(date);
-    if (it == data.end())
-
-    return date;
-
-}*/
 
 
-void Exchange::calculate(std::string date, float value)
+void BitcoinExchange::calculate(std::string date, float value)
 {
     float result;
     std::map<std::string, float>::iterator it = _data.upper_bound(date);
