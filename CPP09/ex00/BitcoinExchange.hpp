@@ -9,28 +9,23 @@
 #include <ctype.h>
 #include <limits>
 
-class Exchange
+class BitcoinExchange
 {
     private:
-            std::string _file;
+            std::map<std::string, float> _file;
             std::map<std::string, float> _data;
-            Exchange();
-
     public:
-            Exchange(std::string file);
-            Exchange(const Exchange &original);
-            Exchange& operator=(const Exchange &original);
-            ~Exchange();
-
-            void getData(std::string file);
+            BitcoinExchange();
+            BitcoinExchange(const BitcoinExchange &original);
+            BitcoinExchange& operator=(const BitcoinExchange &original);
+            ~BitcoinExchange();
+            std::map<std::string, float> getData(std::string file);
             bool checkKey(std::string date);
             int strDigit(std::string str);
             bool checkValue(float value);
-            void makeExchange(std::string input_file);
+            void makeExchange(std::string file);
             void calculate(std::string date, float value);
 
 };
 
 #endif
-
-//fazer check sem 
