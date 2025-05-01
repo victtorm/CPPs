@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-/*
+
 int main()
 {	
 	Fixed a;
@@ -27,41 +27,5 @@ int main()
 	
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
-}*/
-int main(void)
-{
-    Fixed   a;
-    std::cout << "a: " << a << std::endl;
-    Fixed   b(2);
-    std::cout << "b: " << b << std::endl;
-    Fixed   c(3.5f);
-    std::cout << "c: " << c << std::endl;
-    Fixed   d(b);
-    std::cout << "d: " << d << std::endl;
-    a = c;
-    std::cout << "a: " << a << std::endl;
-    std::cout << "b>c: " << (b>c) << std::endl;
-    std::cout << "b<c: " << (b<c) << std::endl;
-    std::cout << "b>=c: " << (b>=c) << std::endl;
-    std::cout << "b<=c: " << (b<=c) << std::endl;
-    std::cout << "b==c: " << (b==c) << std::endl;
-    std::cout << "b!=c: " << (b!=c) << std::endl;
-    std::cout << "b+c: " << (b+c) << std::endl;
-    std::cout << "b-c: " << (b-c) << std::endl;
-    std::cout << "b*c: " << (b*c) << std::endl;
-    std::cout << "b/c: " << (b/c) << std::endl;
-    std::cout << "++c: " << (++c) << std::endl;
-    std::cout << "c: " << c << std::endl;
-    std::cout << "c++: " << c++ << std::endl;
-    std::cout << "c: " << (c) << std::endl;
-    std::cout << "--c: " << (--c) << std::endl;
-    std::cout << "c: " << c << std::endl;
-    std::cout << "c--: " << c-- << std::endl;
-    std::cout << "c: " << (c) << std::endl;
-    std::cout << "min(b, c): " << Fixed::min(b, c) << std::endl;
-    std::cout << "max(b, c): " << Fixed::max(b, c) << std::endl;
-    std::cout << "c as float: " << c.toFloat() << std::endl;
-    std::cout << "c as int: " << c.toInt() << std::endl;
-
-    return (0);
 }
+

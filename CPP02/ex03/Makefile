@@ -1,8 +1,8 @@
-SRCS = main.cpp Fixed.cpp Point.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex02
+NAME = ex03
 CC = c++
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
