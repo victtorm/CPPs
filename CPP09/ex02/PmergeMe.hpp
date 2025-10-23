@@ -13,24 +13,25 @@ class Pmergeme
 {
     public:
         PmergeMe();
+        PmergeMe(std::vector<int> vector_berfore, std::deque<int> deque_before);
         PmergeMe(const PmergeMe &original);
         PmergeMe& operator=(const PmergeMe& original);
         ~PmergeMe();
 
-        void fordJohnsonSorte();
+        void fordJohnsonSort();
         void initContainers(std::vector<std::string> input)
 
         size_t binarySearchVector(const std::vector<int> &vector_container, int value);        
-        std::vector<int> sortVector(std::vector<int> numbers_to_sort);
+        std::vector<int> sortVector(std::vector<int> numbers);
         
         size_t binarySearchDeque(const std::deque<int> &deque_container, int value);
-        std::deque<int> sortDeque(std::deque<int> numbers_to_sort);
+        std::deque<int> sortDeque(std::deque<int> numbers);
 
     private:
-        std::vector<int> _vectorBefore;
-        std::vector<int> _vectorAfter;
-        std::deque<int> _dequeBefore;
-        std::deque<int> _dequeAfter;      
+        std::vector<int> _vector_before;
+        std::vector<int> _vector_after;
+        std::deque<int> _deque_before;
+        std::deque<int> _deque_after;      
 };
 
 template <typename T>
