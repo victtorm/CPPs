@@ -1,4 +1,4 @@
-SRCS = main.cpp PmergeMe.cpp
+SRCS = PmergeMe.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = PmergeMe
 CC = c++

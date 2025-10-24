@@ -8,8 +8,9 @@
 #include <ctime>
 #include <cstdlib>
 #include <climits>
+#include <iomanip>
 
-class Pmergeme
+class PmergeMe
 {
     public:
         PmergeMe();
@@ -19,7 +20,8 @@ class Pmergeme
         ~PmergeMe();
 
         void fordJohnsonSort();
-        void initContainers(std::vector<std::string> input)
+        void initContainers(std::vector<std::string> input);
+        std::vector<size_t> createjacob_sthal_sequenceSequence(size_t limit);
 
         size_t binarySearchVector(const std::vector<int> &vector_container, int value);        
         std::vector<int> sortVector(std::vector<int> numbers);
@@ -31,7 +33,7 @@ class Pmergeme
         std::vector<int> _vector_before;
         std::vector<int> _vector_after;
         std::deque<int> _deque_before;
-        std::deque<int> _deque_after;      
+        std::deque<int> _deque_after;   
 };
 
 template <typename T>

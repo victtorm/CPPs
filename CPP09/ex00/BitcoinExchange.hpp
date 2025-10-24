@@ -2,12 +2,14 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <map>
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <limits>
+#include <climits>
+
 
 class BitcoinExchange
 {
@@ -19,7 +21,7 @@ class BitcoinExchange
             BitcoinExchange(const BitcoinExchange &original);
             BitcoinExchange& operator=(const BitcoinExchange &original);
             ~BitcoinExchange();
-            std::map<std::string, float> getData(std::string file);
+            int	BitcoinExchange::getData();
             bool checkKey(std::string date);
             int strDigit(std::string str);
             bool checkValue(float value);
